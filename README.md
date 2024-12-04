@@ -3,6 +3,7 @@
 This is a frontend application built with React, Vite, and Styled Components. It serves as a home page for hosted applications, providing links to various apps and some additional information about the project.
 
 ## Table of Contents
+
 - [Overview](#overview)
 - [Technologies Used](#technologies-used)
 - [Features](#features)
@@ -12,17 +13,20 @@ This is a frontend application built with React, Vite, and Styled Components. It
 - [GitHub Repository](#github-repository)
 
 ## Overview
+
 This application is hosted on [Netlify](https://www.netlify.com/) and is built using modern frontend tools including React and Vite. The design and layout are inspired by challenges from [Frontend Mentor](https://www.frontendmentor.io/challenges).
 
 The homepage displays a list of hosted applications that users can navigate to by clicking on the links. The app also provides information about the technologies used and where the source code is hosted.
 
 ## Technologies Used
+
 - **React**: A JavaScript library for building user interfaces.
 - **Vite**: A fast, modern build tool for React projects.
 - **Styled Components**: A library for styling React components using tagged template literals.
 - **React Router**: For handling navigation and routing within the app.
 
 ## Features
+
 - A clean, user-friendly homepage that lists the hosted applications.
 - Easy navigation using `NavLink` from `react-router-dom`.
 - Responsive design and hover effects for interactivity.
@@ -34,7 +38,7 @@ To set up this project locally, follow the steps below:
 
 1. **Clone the repository**:
    ```bash
-   git clone https://github.com/yourusername/your-repository-name.git
+   git clone https://github.com/Fil-Ma/frontend-mentor-challenges.git
    cd your-repository-name
    ```
 2. **Install dependencies**:
@@ -56,6 +60,7 @@ npm run dev
 2. Open your browser and navigate to http://localhost:5173 to view the app.
 
 ## Deployment
+
 This app is deployed on Netlify. To deploy the app to Netlify:
 
 1. Create a Netlify account (if you haven't already).
@@ -65,6 +70,7 @@ This app is deployed on Netlify. To deploy the app to Netlify:
 Alternatively, if you want to deploy it manually:
 
 Run the build command:
+
 ```bash
 npm run build
 ```

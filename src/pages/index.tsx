@@ -2,21 +2,24 @@ import PATHS from "@routes/paths";
 import { replaceDashesAndCapitalize } from "@utils/index";
 import { NavLink } from "react-router";
 import styled from "styled-components";
+import ReactIcon from "@assets/general/react.svg?react";
+import ReactRouterIcon from "@assets/general/reactrouter.svg?react";
+import StyledComponentsIcon from "@assets/general/styledcomponents.svg?react";
+import ViteIcon from "@assets/general/vite.svg?react";
+import NetlifyIcon from "@assets/general/netlify.svg?react";
 
 const HomePage = () => {
   return (
     <Container>
-      <Heading>Welcome to the Home Page</Heading>
-      
       <InfoSection>
         <InfoHeading>About This Project</InfoHeading>
-        <Paragraph>
-          Built with
-        </Paragraph>
+        <Paragraph>Built with</Paragraph>
         <TechStackList>
-          <TechItem>React</TechItem>
-          <TechItem>Vite</TechItem>
-          <TechItem>Styled Components</TechItem>
+          <ReactIcon />
+          <ReactRouterIcon />
+          <StyledComponentsIcon />
+          <ViteIcon />
+          <NetlifyIcon />
         </TechStackList>
         <Paragraph>
           All designs and ideas are sourced from{" "}
@@ -29,7 +32,7 @@ const HomePage = () => {
           </a>
           . You can view the source code for this project on{" "}
           <a
-            href="https://github.com"
+            href="https://github.com/Fil-Ma/frontend-mentor-challenges"
             target="_blank"
             rel="noopener noreferrer"
           >
@@ -63,12 +66,6 @@ const Container = styled.div`
   padding: 2rem;
   background-color: #f7f7f7;
   height: 100vh;
-`;
-
-const Heading = styled.h1`
-  font-size: 2rem;
-  color: #333;
-  text-align: center;
 `;
 
 const Description = styled.p`
@@ -134,14 +131,8 @@ const Paragraph = styled.p`
   }
 `;
 
-const TechStackList = styled.ul`
-  list-style-type: none;
-  padding: 0;
+const TechStackList = styled.div`
   margin: 1rem 0;
-`;
-
-const TechItem = styled.li`
-  font-size: 1.1rem;
-  color: #555;
-  margin-bottom: 0.5rem;
+  display: inlin-flex;
+  gap: 32px;
 `;

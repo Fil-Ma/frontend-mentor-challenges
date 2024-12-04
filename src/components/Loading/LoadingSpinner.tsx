@@ -53,7 +53,7 @@ const LoadingSpinner = ({
         cy={size / 2}
         r="20"
         fill="none"
-        stroke-width="5"
+        strokeWidth="5"
       ></circle>
     </Spinner>
   );

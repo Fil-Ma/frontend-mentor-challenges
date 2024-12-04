@@ -14,6 +14,8 @@ This is a frontend application built with React, Vite, and Styled Components. It
 
 ## Overview
 
+[Demo](https://precious-centaur-31ac2e.netlify.app/)
+
 This application is hosted on [Netlify](https://www.netlify.com/) and is built using modern frontend tools including React and Vite. The design and layout are inspired by challenges from [Frontend Mentor](https://www.frontendmentor.io/challenges).
 
 The homepage displays a list of hosted applications that users can navigate to by clicking on the links. The app also provides information about the technologies used and where the source code is hosted.

@@ -2,25 +2,12 @@ import PATHS from "@routes/paths";
 import { replaceDashesAndCapitalize } from "@utils/index";
 import { NavLink } from "react-router";
 import styled from "styled-components";
-import ReactIcon from "@assets/general/react.svg?react";
-import ReactRouterIcon from "@assets/general/reactrouter.svg?react";
-import StyledComponentsIcon from "@assets/general/styledcomponents.svg?react";
-import ViteIcon from "@assets/general/vite.svg?react";
-import NetlifyIcon from "@assets/general/netlify.svg?react";
 
 const HomePage = () => {
   return (
     <Container>
       <InfoSection>
         <InfoHeading>About This Project</InfoHeading>
-        <Paragraph>Built with</Paragraph>
-        <TechStackList>
-          <ReactIcon />
-          <ReactRouterIcon />
-          <StyledComponentsIcon />
-          <ViteIcon />
-          <NetlifyIcon />
-        </TechStackList>
         <Paragraph>
           All designs and ideas are sourced from{" "}
           <a
@@ -129,10 +116,4 @@ const Paragraph = styled.p`
       color: #005fa3;
     }
   }
-`;
-
-const TechStackList = styled.div`
-  margin: 1rem 0;
-  display: inlin-flex;
-  gap: 32px;
 `;

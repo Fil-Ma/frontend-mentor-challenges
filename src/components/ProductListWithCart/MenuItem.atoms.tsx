@@ -120,11 +120,11 @@ export const DetailsContainer = styled.div`
   }
 
   p:nth-of-type(2) {
-    fontweight: 500;
+    font-weight: 500;
   }
 
   p:nth-of-type(3) {
-    fontweight: 500;
+    font-weight: 500;
     color: ${colorsRoot.red};
   }
 `;

@@ -3,6 +3,8 @@ import styled from "styled-components";
 import EmptyStateIcon from "@assets/ProductListWithCart/icons/illustration-empty-cart.svg?react";
 
 export const PageContainer = styled.div`
+  font-family: "Red Hat Text", serif;
+  font-style: normal;
   padding: 64px;
   display: flex;
   flex-direction: row;

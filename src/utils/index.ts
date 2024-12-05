@@ -17,5 +17,8 @@ export const formatPrice = (price: string | number) => {
     result = price;
   }
 
-  return result.toFixed(2);
+  return result.toLocaleString("en", {
+    minimumFractionDigits: 2,
+    maximumFractionDigits: 2,
+  });
 };

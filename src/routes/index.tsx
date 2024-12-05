@@ -1,10 +1,11 @@
 import PageLayout from "@components/PageLayout/PageLayout";
 import { lazy } from "react";
 import PATHS from "./paths";
-import ProductListWithCart from "@pages/ProductListWithCart";
 
-const BentoGrid = lazy(() => import("../pages/BentoGrid"));
 const HomePage = lazy(() => import("@pages/index"));
+const BentoGrid = lazy(() => import("@pages/BentoGrid"));
+const ProductListWithCart = lazy(() => import("@pages/ProductListWithCart"));
+const MortgageCalculator = lazy(() => import("@pages/MortgageCalculator"));
 
 export const routes = [
   {
@@ -18,6 +19,7 @@ export const routes = [
     children: [
       { path: PATHS.BENTO_GRID, element: <BentoGrid /> },
       { path: PATHS.PRODUCT_LIST_WITH_CART, element: <ProductListWithCart /> },
+      { path: PATHS.MORTGAGE_CALCULATOR, element: <MortgageCalculator /> },
     ],
   },
 ];

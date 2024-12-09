@@ -17,7 +17,7 @@ const DesktopNav = ({ items }: { items: TNavItem[] }) => {
 export default DesktopNav;
 
 const Container = styled.nav`
-  ul {
+  > ul:first-of-type {
     list-style-type: none;
     display: flex;
     flex-direction: row;

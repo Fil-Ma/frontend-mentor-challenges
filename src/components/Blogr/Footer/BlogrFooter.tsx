@@ -12,8 +12,9 @@ const BlogrFooter = () => {
       <Logo />
       {navItems.map((category) => (
         <FooterList
+          key={category.label}
           title={category.label}
-          items={category.children.map(({ label }) => ({ label }))}
+          items={category.subItems.map(({ label }) => ({ label }))}
         />
       ))}
     </Footer>

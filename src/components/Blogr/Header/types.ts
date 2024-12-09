@@ -4,5 +4,5 @@ export type TNavRawItem = {
 };
 
 export type TNavItem = TNavRawItem & {
-  children: TNavRawItem[];
+  subItems: TNavRawItem[];
 };

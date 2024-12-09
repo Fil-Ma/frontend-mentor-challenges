@@ -52,6 +52,11 @@ const CategoryItem = styled.li`
     color: ${neutral.white};
   }
 
+  a:hover {
+    text-decoration: underline;
+    text-decoration-color: ${neutral.white};
+  }
+
   @media (max-width: 640px) {
     text-align: center;
   }

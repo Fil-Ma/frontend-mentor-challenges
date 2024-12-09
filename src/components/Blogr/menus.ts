@@ -61,17 +61,17 @@ const navItems: TNavItem[] = [
   {
     label: "Product",
     action: () => console.log("Product"),
-    children: productItems,
+    subItems: productItems,
   },
   {
     label: "Company",
     action: () => console.log("Company"),
-    children: companyItems,
+    subItems: companyItems,
   },
   {
     label: "Connect",
     action: () => console.log("Connect"),
-    children: connectItems,
+    subItems: connectItems,
   },
 ];
 

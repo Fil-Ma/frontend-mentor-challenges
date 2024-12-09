@@ -40,6 +40,35 @@ const colors = {
       },
     },
   },
+  blogr: {
+    primary: {
+      red: {
+        light: "hsl(356, 100%, 66%)",
+        dark: "hsl(355, 100%, 74%)",
+      },
+      blue: {
+        dark: "hsl(208, 49%, 24%)",
+      },
+    },
+    neutral: {
+      white: "hsl(0, 0%, 100%)",
+      grayishBlue: {
+        main: "hsl(240, 2%, 79%)",
+        dark: "hsl(207, 13%, 34%)",
+      },
+      blackBlue: "hsl(240, 10%, 16%)",
+    },
+    gradient: {
+      red: {
+        veryLight: "hsl(13, 100%, 72%)",
+        light: "hsl(353, 100%, 62%)",
+      },
+      blue: {
+        dark: "hsl(237, 17%, 21%)",
+        desaturated: "hsl(237, 23%, 32%)",
+      },
+    },
+  },
 };
 
 export default colors;

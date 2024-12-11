@@ -2,7 +2,8 @@ import { Outlet } from "react-router";
 import styled from "styled-components";
 
 const LayoutContainer = styled.div`
-  max-width: min(100vw, 1440px);
+  max-width: 100vw;
+  min-height: 100vh;
   margin: 0 auto;
 `;
 

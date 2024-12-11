@@ -69,6 +69,31 @@ const colors = {
       },
     },
   },
+  crowdfunding: {
+    cyan: {
+      main: "hsl(176, 50%, 47%)",
+      dark: "hsl(176, 72%, 28%)",
+    },
+    black: "hsl(0, 0%, 0%)",
+    gray: "hsl(0, 0%, 48%)",
+  },
+  "chat-app-illustration": {
+    violet: {
+      pale: "hsl(276, 100%, 81%)",
+      moderate: "hsl(276, 55%, 52%)",
+      desaturated: "hsl(271, 15%, 43%)",
+      dark: "hsl(271, 36%, 24%)",
+      grayish: "hsl(270, 7%, 64%)",
+    },
+    blue: "hsl(206, 6%, 79%)",
+    gradient: {
+      magenta: "hsl(293, 100%, 63%)",
+      violet: "hsl(264, 100%, 61%)",
+    },
+    white: "hsl(0, 0%, 100%)",
+    background: "hsl(270, 20%, 96%)",
+    lightMagenta: "hsl(289, 100%, 72%)",
+  },
 };
 
 export default colors;

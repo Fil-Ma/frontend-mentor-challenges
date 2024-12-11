@@ -7,6 +7,8 @@ const BentoGrid = lazy(() => import("@pages/BentoGrid"));
 const ProductListWithCart = lazy(() => import("@pages/ProductListWithCart"));
 const MortgageCalculator = lazy(() => import("@pages/MortgageCalculator"));
 const Blogr = lazy(() => import("@pages/Blogr"));
+const Crowdfunding = lazy(() => import("@pages/Crowdfunding"));
+const ChatAppillustration = lazy(() => import("@pages/ChatAppIllustration"));
 
 export const routes = [
   {
@@ -22,6 +24,8 @@ export const routes = [
       { path: PATHS.PRODUCT_LIST_WITH_CART, element: <ProductListWithCart /> },
       { path: PATHS.MORTGAGE_CALCULATOR, element: <MortgageCalculator /> },
       { path: PATHS.BLOGR, element: <Blogr /> },
+      { path: PATHS.CROWDFUNDING, element: <Crowdfunding /> },
+      { path: PATHS.CHAT_APP_ILLUSTRATION, element: <ChatAppillustration /> },
     ],
   },
 ];

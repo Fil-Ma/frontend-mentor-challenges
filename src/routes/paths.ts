@@ -3,6 +3,8 @@ const PATHS = {
   PRODUCT_LIST_WITH_CART: "product-list-with-cart",
   MORTGAGE_CALCULATOR: "mortgage-calculator",
   BLOGR: "blogr",
+  CROWDFUNDING: "crowdfunding",
+  CHAT_APP_ILLUSTRATION: "chat-app-illustration",
 };
 
 export default PATHS;

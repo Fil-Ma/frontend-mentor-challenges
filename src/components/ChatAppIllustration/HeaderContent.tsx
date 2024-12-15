@@ -7,29 +7,25 @@ const { white, violet } = colors["chat-app-illustration"];
 const HeaderContent = () => {
   return (
     <Container>
-      <IconButton>
-      &#8249;
-      </IconButton>
+      <IconButton>&#8249;</IconButton>
       <Avatar src={avatar} alt="avatar" />
       <NameContainer>
         <h3>Samuel Green</h3>
         <p>Available to Walk</p>
       </NameContainer>
-      <IconButton>
-      &#8942;
-      </IconButton>
+      <IconButton>&#8942;</IconButton>
     </Container>
-  )
-}
+  );
+};
 
 export default HeaderContent;
 
 const Container = styled.div`
-width: 100%;
+  width: 100%;
   display: inline-flex;
   gap: 8px;
   align-items: center;
-`
+`;
 
 const IconButton = styled.button`
   padding: 4px;
@@ -38,7 +34,7 @@ const IconButton = styled.button`
   background: transparent;
   border: none;
   font-size: 1.5rem;
-`
+`;
 
 const Avatar = styled.img`
   width: 36px;
@@ -47,10 +43,10 @@ const Avatar = styled.img`
   border: 2px solid ${white};
   border-radius: 50%;
   box-sizing: border-box;
-`
+`;
 
 const NameContainer = styled.div`
-flex-grow: 1;
+  flex-grow: 1;
   h3 {
     color: ${white};
     font-size: 1rem;
@@ -64,4 +60,4 @@ flex-grow: 1;
     line-height: 0.7rem;
     margin: 4px 0;
   }
-`
+`;

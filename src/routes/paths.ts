@@ -5,6 +5,7 @@ const PATHS = {
   BLOGR: "blogr",
   CROWDFUNDING: "crowdfunding",
   CHAT_APP_ILLUSTRATION: "chat-app-illustration",
+  EASY_BANK: "easy-bank",
 };
 
 export default PATHS;

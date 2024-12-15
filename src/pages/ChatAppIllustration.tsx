@@ -11,7 +11,7 @@ const ChatAppillustration = () => {
       <DesignPart />
       <Content>
         <div>
-        <ChatApp />
+          <ChatApp />
         </div>
         <Text />
       </Content>
@@ -44,7 +44,7 @@ const DesignPart = styled.div`
   );
 
   @media (max-width: 480px) {
-  width: 90%;
+    width: 90%;
     height: 60%;
     transform: translateX(-50%);
   }

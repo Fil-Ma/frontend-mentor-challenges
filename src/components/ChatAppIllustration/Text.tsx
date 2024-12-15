@@ -29,7 +29,8 @@ const Container = styled.div`
   }
 
   @media (max-width: 640px) {
-    p, h1 {
+    p,
+    h1 {
       text-align: center;
     }
   }

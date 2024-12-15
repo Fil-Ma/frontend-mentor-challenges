@@ -94,6 +94,17 @@ const colors = {
     background: "hsl(270, 20%, 96%)",
     lightMagenta: "hsl(289, 100%, 72%)",
   },
+  "easy-bank": {
+    blue: {
+      light: "hsl(220, 16%, 96%)",
+      main: "hsl(233, 8%, 62%)",
+      dark: "hsl(233, 26%, 24%)",
+    },
+    green: "hsl(136, 65%, 51%)",
+    cyan: "hsl(192, 70%, 51%)",
+    gray: "hsl(0, 0%, 98%)",
+    white: "hsl(0, 0%, 100%)",
+  },
 };
 
 export default colors;

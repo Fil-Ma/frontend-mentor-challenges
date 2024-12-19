@@ -101,7 +101,7 @@ const IconsList = styled.ul`
   align-items: center;
   gap: 8px;
 
-   @media (max-width: 700px) {
+  @media (max-width: 700px) {
     gap: 12px;
   }
 `;

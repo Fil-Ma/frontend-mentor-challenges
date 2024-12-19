@@ -82,9 +82,9 @@ const SectionHeading = styled.div`
   width: 50%;
 
   @media (max-width: 480px) {
-  width: 100%;
-  text-align: center;
-}
+    width: 100%;
+    text-align: center;
+  }
 `;
 
 const PerksContainer = styled.div`

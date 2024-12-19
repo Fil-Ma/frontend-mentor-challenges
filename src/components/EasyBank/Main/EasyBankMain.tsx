@@ -50,8 +50,16 @@ const Main = styled.main`
   }
 `;
 const IntroSection = styled.section`
-  width: 40%;
   padding: 120px 12px;
   max-width: 1440px;
-  margin: 0 auto;
+  margin-right: auto;
+
+  @media (max-width: 700px) {
+    margin: 0;
+    text-align: center;
+  }
+
+  @media (min-width: 700px) {
+    width: 40%;
+  }
 `;

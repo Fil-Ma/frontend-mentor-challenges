@@ -70,13 +70,15 @@ const useCalculator = (updatePayment: (payment: TPayment) => void) => {
   };
 
   const checkErrors = () => {
+    const isRateError = !rate || rate > 10;
+    const isTermError = !term || term > 50;
     setErrorElement({
       amount: !amount,
-      term: !term,
-      rate: !rate,
+      term: isTermError,
+      rate: isRateError,
       radio: !radio,
     });
-    return !amount || !term || !rate || !radio;
+    return !amount || isTermError || isRateError || !radio;
   };
 
   const onSubmit = () => {
@@ -109,10 +111,14 @@ function calculateMortgage(amount: number, years: number, rate: number) {
   const monthlyRate = rate / 100 / 12;
   const totalPayments = years * 12;
 
-  const monthlyPayment =
-    (amount * monthlyRate * Math.pow(1 + monthlyRate, totalPayments)) /
-    (Math.pow(1 + monthlyRate, totalPayments) - 1);
+  const exponen = Math.pow(1 + monthlyRate, totalPayments);
+  const monthlyPayment = (amount * monthlyRate * exponen) / (exponen - 1);
 
+  console.log({
+    exponen,
+    monthlyRate,
+    totalPayments,
+  });
   return {
     monthly: monthlyPayment,
     total: monthlyPayment * 12,

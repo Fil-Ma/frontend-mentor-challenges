@@ -55,7 +55,7 @@ const Calculator = ({
           type="number"
           value={term}
           onChange={onInputChange("term")}
-          error={printError(errorElement["term"])}
+          error={printError(errorElement["term"], term, 50)}
         />
         <Input
           label="Interest Rate"
@@ -63,7 +63,7 @@ const Calculator = ({
           type="number"
           value={rate}
           onChange={onInputChange("rate")}
-          error={printError(errorElement["rate"])}
+          error={printError(errorElement["rate"], rate, 10)}
         />
       </TermAndRateWrapper>
       <RadioForm {...radio} error={printError(errorElement["radio"])} />
@@ -89,8 +89,12 @@ const TermAndRateWrapper = styled.div`
   }
 `;
 
-const printError = (isError: boolean) => {
-  if (isError) return "This field is required";
-
-  return "";
+const printError = (isError: boolean, inputValue?: any, limit?: number) => {
+  if (!isError) {
+    return "";
+  } else if (inputValue) {
+    return `The value is above the maximum limit (${limit})`;
+  } else {
+    return "This field is required";
+  }
 };

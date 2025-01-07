@@ -17,13 +17,13 @@ const PaymentResult = ({ payment }: { payment: TPayment }) => {
 
       <StyledResult>
         <InfoParagraph>Your monthly repayments</InfoParagraph>
-        <MonthlyPayment>&pound;{formatPrice(payment.monthly)}</MonthlyPayment>
+        <MonthlyPayment>&pound; {formatPrice(payment.monthly)}</MonthlyPayment>
 
         <Divider />
 
         <InfoParagraph>Total you'll repay over the term</InfoParagraph>
         <HighlitedParagraph>
-          &pound;{formatPrice(payment.total)}
+          &pound; {formatPrice(payment.total)}
         </HighlitedParagraph>
       </StyledResult>
     </div>

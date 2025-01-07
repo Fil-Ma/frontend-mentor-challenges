@@ -58,9 +58,9 @@ const Header = styled.div`
   display: flex;
   flex-direction: row;
   justify-content: space-between;
-  align-items: center;
   background: inherit;
   margin-bottom: 16px;
+  height: 25px;
 `;
 
 type THeader = {

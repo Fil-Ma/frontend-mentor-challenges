@@ -18,7 +18,7 @@ const IpTrackerResults = ({ results }: { results: ResultsObject }) => {
       {entries.map(([key, value], index) => (
         <ResultsItem key={key} $isLast={index === entries.length - 1}>
           <p className="results-item-key">{keys[key as ResultsKeys]}</p>
-          <p className="results-item-value">{value}</p>
+          <p className="results-item-value">{value || "-"}</p>
         </ResultsItem>
       ))}
     </Container>
@@ -55,6 +55,8 @@ const ResultsItem = styled.div<{ $isLast: boolean }>`
     color: ${dark};
     font-size: 1.2rem;
     font-weight: 500;
+    line-height: 1.2rem;
+    min-height: 1.2rem;
   }
 
   @media (min-width: ${breakpoint}px) {

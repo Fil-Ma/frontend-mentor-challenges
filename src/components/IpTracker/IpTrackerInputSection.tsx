@@ -3,10 +3,18 @@ import desktopBackground from "@assets/IpTracker/pattern-bg-desktop.png?inline";
 import mobileBackground from "@assets/IpTracker/pattern-bg-mobile.png?inline";
 import RightArrow from "@assets/IpTracker/icon-arrow.svg?react";
 import colors from "@constants/colors";
-import React, { ChangeEvent, FormEvent, useState } from "react";
+import React, {
+  ChangeEvent,
+  FormEvent,
+  useCallback,
+  useEffect,
+  useState,
+} from "react";
 import IpTrackerResults from "./IpTrackerResults";
 import { IPSubmitHandler, ResultsObject, TMapPosition } from "./types";
 import { getIpData } from "./getIpData";
+import { isValidIPv4 } from "./validateIp";
+import throttle from "lodash.throttle";
 
 const {
   gray: { dark, main },
@@ -46,6 +54,9 @@ export default IpTrackerInputSection;
 
 const Section = styled.section`
   background: url("${desktopBackground}");
+  background-size: cover;
+  background-repeat: no-repeat;
+
   text-align: center;
   padding: 0 16px 100px;
   position: relative;
@@ -64,17 +75,29 @@ const Section = styled.section`
 `;
 
 const StyledForm = styled.form`
-  display: inline-flex;
-  align-items: stretch;
   width: 500px;
-  border-radius: 8px;
-  overflow: hidden;
+  margin: 0 auto;
+
+  div:first-of-type {
+    width: 100%;
+    display: inline-flex;
+    align-items: stretch;
+    border-radius: 8px;
+    overflow: hidden;
+  }
 
   input {
     background-color: white;
     flex-grow: 1;
     border: none;
     padding: 12px 20px;
+  }
+
+  p {
+    font-size: 0.9rem;
+    margin: 8px 0;
+    color: red;
+    text-align: left;
   }
 
   @media (max-width: 650px) {
@@ -99,10 +122,15 @@ interface IPInputProps extends React.HTMLProps<HTMLInputElement> {
 
 const IPInput = ({ handleSubmit, ...props }: IPInputProps) => {
   const [value, setValue] = useState("");
+  const [error, setError] = useState("");
+
+  const submitHandler = useCallback(throttle(handleSubmit, 5000), []);
 
   const onSubmit = async (event: FormEvent<HTMLFormElement>) => {
     event.preventDefault();
-    await handleSubmit(value);
+
+    if (error) return;
+    await submitHandler(value);
   };
 
   const onChange = (event: ChangeEvent<HTMLInputElement>) => {
@@ -110,12 +138,24 @@ const IPInput = ({ handleSubmit, ...props }: IPInputProps) => {
     setValue(newValue);
   };
 
+  useEffect(() => {
+    const isValid = isValidIPv4(value);
+    if (isValid || !value) {
+      setError("");
+    } else {
+      setError("Invalid IP Address");
+    }
+  }, [value]);
+
   return (
     <StyledForm onSubmit={onSubmit}>
-      <input {...props} value={value} onChange={onChange} />
-      <SubmitButton type="submit">
-        <RightArrow />
-      </SubmitButton>
+      <div>
+        <input {...props} value={value} onChange={onChange} />
+        <SubmitButton type="submit" disabled={!!error}>
+          <RightArrow />
+        </SubmitButton>
+      </div>
+      {error && <p>{error}</p>}
     </StyledForm>
   );
 };

@@ -3,7 +3,8 @@ import Button from "../Button";
 import PerksSection from "./PerksSection";
 import colors from "@constants/colors";
 import ArticlesSection from "./ArticlesSection";
-// import desktopBackground from "@assets/EasyBank/bg-intro-desktop.svg?inline";
+import desktopBackground from "@assets/EasyBank/bg-intro-desktop.svg?inline";
+import mobileBackground from "@assets/EasyBank/bg-intro-mobile.svg?inline";
 
 const { blue } = colors["easy-bank"];
 
@@ -20,6 +21,7 @@ const EasyBankMain = () => {
           </p>
           <Button>Request Invite</Button>
         </div>
+        <div className="intro-section-image" />
       </IntroSection>
       <PerksSection />
       <ArticlesSection />
@@ -28,11 +30,6 @@ const EasyBankMain = () => {
 };
 
 export default EasyBankMain;
-
-// background-image: url("${desktopBackground}");
-//   background-repeat: no-repeat;
-//   background-size: cover;
-//   background-position: 140% 75%;
 
 const Main = styled.main`
   h1,
@@ -49,17 +46,47 @@ const Main = styled.main`
     margin-block: 1.5rem;
   }
 `;
-const IntroSection = styled.section`
-  padding: 120px 12px;
-  max-width: 1440px;
-  margin-right: auto;
 
-  @media (max-width: 700px) {
-    margin: 0;
-    text-align: center;
+const IntroSection = styled.section`
+  padding: 0 12px;
+  max-width: 1440px;
+  margin: 0 auto;
+
+  display: flex;
+  flex-direction: row;
+  gap: 16px;
+
+  h1 {
+    font-size: 2.5rem;
+    line-height: 2.7rem;
   }
 
-  @media (min-width: 700px) {
-    width: 40%;
+  div:first-of-type {
+    width: 30%;
+    padding: 150px 0;
+  }
+
+  .intro-section-image {
+    flex-grow: 1;
+    min-height: 300px;
+    background-image: url("${desktopBackground}");
+    background-repeat: no-repeat;
+    background-size: 100%;
+    background-position: 10% 80%;
+  }
+
+  @media (max-width: 700px) {
+    flex-direction: column-reverse;
+
+    div:first-of-type {
+      width: 100%;
+      text-align: center;
+      padding-block: 30px 80px;
+    }
+
+    .intro-section-image {
+      background-image: url("${mobileBackground}");
+      background-size: cover;
+    }
   }
 `;

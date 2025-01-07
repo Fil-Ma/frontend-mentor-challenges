@@ -81,6 +81,10 @@ const Container = styled.section`
 const SectionHeading = styled.div`
   width: 50%;
 
+  h2 {
+    font-size: 1.8rem;
+  }
+
   @media (max-width: 480px) {
     width: 100%;
     text-align: center;

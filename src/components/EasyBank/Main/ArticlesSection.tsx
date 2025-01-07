@@ -67,6 +67,7 @@ const Container = styled.section`
   padding: 42px 12px;
 
   h2 {
+    font-size: 1.8rem;
     margin-block: 28px 24px !important;
   }
 

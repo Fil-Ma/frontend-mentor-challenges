@@ -10,6 +10,7 @@ const Blogr = lazy(() => import("@pages/Blogr"));
 const Crowdfunding = lazy(() => import("@pages/Crowdfunding"));
 const ChatAppillustration = lazy(() => import("@pages/ChatAppIllustration"));
 const EasyBank = lazy(() => import("@pages/EasyBank"));
+const IpTracker = lazy(() => import("@pages/IpTracker"));
 
 export const routes = [
   {
@@ -28,6 +29,7 @@ export const routes = [
       { path: PATHS.CROWDFUNDING, element: <Crowdfunding /> },
       { path: PATHS.CHAT_APP_ILLUSTRATION, element: <ChatAppillustration /> },
       { path: PATHS.EASY_BANK, element: <EasyBank /> },
+      { path: PATHS.IP_TRACKER, element: <IpTracker /> },
     ],
   },
 ];

@@ -105,6 +105,12 @@ const colors = {
     gray: "hsl(0, 0%, 98%)",
     white: "hsl(0, 0%, 100%)",
   },
+  "ip-tracker": {
+    gray: {
+      dark: "hsl(0, 0%, 17%)",
+      main: "hsl(0, 0%, 59%)",
+    },
+  },
 };
 
 export default colors;

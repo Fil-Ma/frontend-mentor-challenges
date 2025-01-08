@@ -33,7 +33,15 @@ const Section = ({
       {(textPosition === "right" || isMobile) && (
         <Image src={image} alt={imageAlt} />
       )}
-      <TextContainer>
+      <TextContainer
+        $padding={
+          isMobile
+            ? "0"
+            : textPosition === "right"
+              ? "0 130px 0 0"
+              : "0 0 0 130px"
+        }
+      >
         {textBlocks.map(({ h3, p }) => (
           <React.Fragment key={h3}>
             <h3>{h3}</h3>
@@ -51,7 +59,7 @@ const Section = ({
 export default Section;
 
 const Container = styled.section`
-  padding: 150px 130px;
+  padding: 160px 0;
   position: relative;
   display: flex;
   flex-direction: row;
@@ -81,8 +89,9 @@ const Title = styled.h1`
   }
 `;
 
-const TextContainer = styled.div`
+const TextContainer = styled.div<{ $padding: string }>`
   flex: 1;
+  padding: ${(props) => props.$padding};
 
   h3 {
     color: ${primary.blue.dark};

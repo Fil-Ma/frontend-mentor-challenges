@@ -9,7 +9,10 @@ const { neutral } = colors.blogr;
 const BlogrFooter = () => {
   return (
     <Footer>
-      <Logo />
+      <div>
+        <Logo />
+      </div>
+
       {navItems.map((category) => (
         <FooterList
           key={category.label}
@@ -33,10 +36,18 @@ const Footer = styled.footer`
   justify-content: space-evenly;
   align-items: flex-start;
 
+  div:first-of-type {
+    padding: 16px 0;
+  }
+
   @media (max-width: 640px) {
     padding-inline: 24px;
     flex-direction: column;
     align-items: center;
     justify-content: flex-start;
+
+    div:first-of-type {
+      padding: 32px 0 24px;
+    }
   }
 `;

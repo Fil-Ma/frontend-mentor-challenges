@@ -64,4 +64,5 @@ export default BlogrMain;
 
 const StyledMain = styled.main`
   padding: 32px 0;
+  overflowx: hidden;
 `;

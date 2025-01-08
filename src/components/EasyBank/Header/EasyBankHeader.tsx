@@ -16,7 +16,7 @@ const EasyBankHeader = () => {
   const isMobile = useIsMobile(640);
 
   const togglePopover = (event: React.MouseEvent<HTMLButtonElement>) => {
-    console.log("clicked", Boolean(anchorEl))
+    console.log("clicked", Boolean(anchorEl));
     if (anchorEl) return;
     setAnchorEl(event.currentTarget);
   };

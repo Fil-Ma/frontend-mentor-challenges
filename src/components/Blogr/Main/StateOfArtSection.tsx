@@ -7,7 +7,7 @@ const { neutral, gradient } = colors.blogr;
 const StateOfArtSection = () => {
   return (
     <Section>
-      <div className="phones"></div>
+      <Phones />
       <div>
         <h3>State of the Art Infrastructure</h3>
         <p>
@@ -39,6 +39,23 @@ const Section = styled.section`
     ${gradient.blue.desaturated}
   );
 
+  position: relative;
+
+  &::before {
+    content: "";
+    position: absolute;
+    background: url("${phonesImage}");
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: 50% 50%;
+    z-index: 1;
+    left: 0;
+    width: 50%;
+    height: 140%;
+  }
+
+  
+
   @media (max-width: 640px) {
     flex-direction: column;
     gap: 24px;
@@ -49,6 +66,17 @@ const Section = styled.section`
       ${gradient.blue.dark},
       ${gradient.blue.desaturated}
     );
+
+    &::before {
+      width: 100%;
+      height: 80%;
+      top: -30%;
+    }
+
+    h3, p {
+      padding: 0 24px;
+      text-align: center;
+    }
   }
 
   h3,
@@ -66,11 +94,13 @@ const Section = styled.section`
   div {
     flex: 1;
   }
-
-  .phones {
-    background: url("${phonesImage}");
-    background-size: 1000px 1000px;
-    background-position: center;
-    height: 200px;
-  }
 `;
+
+const Phones = styled.div`
+    height: 200px;
+    
+
+    @media (max-width: 640px) {
+min-height: 150px;
+}
+`

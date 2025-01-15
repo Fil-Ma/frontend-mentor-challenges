@@ -6,6 +6,7 @@ const PATHS = {
   CHAT_APP_ILLUSTRATION: "chat-app-illustration",
   EASY_BANK: "easy-bank",
   IP_TRACKER: "ip-tracker",
+  REST_COUNTRIES: "rest-countries",
 };
 
 export default PATHS;

@@ -54,8 +54,6 @@ const Section = styled.section`
     height: 140%;
   }
 
-  
-
   @media (max-width: 640px) {
     flex-direction: column;
     gap: 24px;
@@ -73,7 +71,8 @@ const Section = styled.section`
       top: -30%;
     }
 
-    h3, p {
+    h3,
+    p {
       padding: 0 24px;
       text-align: center;
     }
@@ -97,10 +96,9 @@ const Section = styled.section`
 `;
 
 const Phones = styled.div`
-    height: 200px;
-    
+  height: 200px;
 
-    @media (max-width: 640px) {
-min-height: 150px;
-}
-`
+  @media (max-width: 640px) {
+    min-height: 150px;
+  }
+`;

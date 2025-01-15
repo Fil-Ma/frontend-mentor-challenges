@@ -111,6 +111,18 @@ const colors = {
       main: "hsl(0, 0%, 59%)",
     },
   },
+  "rest-countries": {
+    blue: {
+      dark: "hsl(209, 23%, 22%)", // dark mode elements
+      background: "hsl(207, 26%, 17%)", // dark mode background
+      text: "hsl(200, 15%, 8%)", // light mode text
+    },
+    gray: {
+      dark: "hsl(0, 0%, 52%)", // light mode input
+      light: "hsl(0, 0%, 98%)", // light mode background
+    },
+    white: "hsl(0, 0%, 100%)", // dark mode text and light mode elements
+  },
 };
 
 export default colors;

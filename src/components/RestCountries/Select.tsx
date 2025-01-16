@@ -14,8 +14,8 @@ type Props<T> = {
 };
 
 const Select = <T extends string>({ options, value, onChange }: Props<T>) => {
-  const {theme } = useDarkModeContext();
-  
+  const { theme } = useDarkModeContext();
+
   const handleChange = (event: ChangeEvent<HTMLSelectElement>) => {
     onChange(event.target.value);
   };
@@ -47,8 +47,8 @@ const colorsMap = {
     background: blue.dark,
     border: "transparent",
     placeholder: white,
-  }
-}
+  },
+};
 
 const CustomSelect = styled.select<{ $theme: TContextTheme }>`
   width: 200px;

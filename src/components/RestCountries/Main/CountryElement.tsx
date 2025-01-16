@@ -2,6 +2,7 @@ import colors from "@constants/colors";
 import { useDarkModeContext } from "@contexts/DarkMode/DarkModeContext";
 import { TContextTheme } from "@contexts/DarkMode/types";
 import styled from "styled-components";
+import DetailsList from "./DetailsElement";
 
 const {
   blue: { dark, text },
@@ -37,16 +38,7 @@ const CountryElement = ({
       <Image src={data.flags.png} alt={data.flags.alt} />
       <div>
         <h2>{data.name.official}</h2>
-        <DetailsList $theme={theme}>
-          {details.map(({ name, value }) => (
-            <li key={name}>
-              <p>
-                <span className="detail-key">{name}:</span>
-                <span>{value}</span>
-              </p>
-            </li>
-          ))}
-        </DetailsList>
+        <DetailsList details={details} />
       </div>
     </Container>
   );
@@ -78,28 +70,5 @@ const Container = styled.li<{ $theme: TContextTheme }>`
 
   div {
     padding: 32px 24px;
-  }
-`;
-
-const DetailsList = styled.ul<{ $theme: TContextTheme }>`
-  margin: 0;
-  padding: 24px 0;
-  list-style-type: none;
-  display: block;
-
-  p {
-    display: inline-flex;
-    gap: 4px;
-    align-items: center;
-    margin: 2px 0;
-    color: ${(props) => (props.$theme === "light" ? text : white)};
-  }
-
-  span {
-    text-transform: capitalize;
-  }
-
-  .detail-key {
-    font-weight: 700;
   }
 `;

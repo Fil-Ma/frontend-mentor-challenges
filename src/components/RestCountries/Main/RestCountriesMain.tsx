@@ -1,6 +1,3 @@
-import colors from "@constants/colors";
-import { useDarkModeContext } from "@contexts/DarkMode/DarkModeContext";
-import { TContextTheme } from "@contexts/DarkMode/types";
 import { useState } from "react";
 import styled from "styled-components";
 import DetailsPage from "./DetailsPage";
@@ -11,22 +8,18 @@ import { TCountryFilters } from "../types";
 import HiddenComponent from "@components/HiddenComponent";
 import SearchBar from "../SearchBar";
 import Select from "../Select";
-
-const {
-  blue: { background },
-  gray: { light },
-} = colors["rest-countries"];
+import BackButton from "./BackButton";
+import EmptyState from "../EmptyState";
 
 const regions = ["Africa", "America", "Asia", "Europe", "Oceania"];
 
 const RestCountriesMain = () => {
-  const { theme } = useDarkModeContext();
   const [selectedCountry, setSelectedCountry] = useState<any>(null);
 
   const [search, setSearch] = useState("");
   const [region, setRegion] = useState("");
 
-  const { data, isLoading, isError } = useFetchCountries({
+  const { data, isLoading } = useFetchCountries({
     name: search,
     region,
   });
@@ -39,25 +32,36 @@ const RestCountriesMain = () => {
     }
   };
 
-  const hasData = !!data && Array.isArray(data);
-  const showEmptyState = (!hasData && !isLoading) || isError;
+  const handleGoBack = () => {
+    setSearch("");
+    setRegion("");
+    setSelectedCountry(null);
+  };
+
+  const dataIsEmpty = data.length === 0
 
   return (
-    <Main $theme={theme}>
+    <Main>
       {isLoading && <LoadingSpinner />}
-      <ActionsBar>
-        <SearchBar submitHandler={setFilter("name")} />
-        <Select
-          value={region}
-          onChange={setFilter("region")}
-          options={regions}
-        />
-      </ActionsBar>
-      {showEmptyState && <p>data not available</p>}
-      <HiddenComponent hidden={showEmptyState}>
+
+      <HiddenComponent hidden={!!selectedCountry}>
+        <ActionsBar>
+          <SearchBar submitHandler={setFilter("name")} />
+          <Select
+            value={region}
+            onChange={setFilter("region")}
+            options={regions}
+          />
+        </ActionsBar>
+      </HiddenComponent>
+      <BackButton hidden={!selectedCountry} onClick={handleGoBack} />
+
+      {dataIsEmpty && <EmptyState />}
+
+      <HiddenComponent hidden={dataIsEmpty || isLoading}>
         {!selectedCountry ? (
           <CountryList>
-            {data?.map((el: any) => (
+            {(data || []).map((el: any) => (
               <CountryElement
                 key={el.name.official}
                 data={el}
@@ -66,7 +70,7 @@ const RestCountriesMain = () => {
             ))}
           </CountryList>
         ) : (
-          <DetailsPage />
+          <DetailsPage data={selectedCountry} />
         )}
       </HiddenComponent>
     </Main>
@@ -75,9 +79,7 @@ const RestCountriesMain = () => {
 
 export default RestCountriesMain;
 
-const Main = styled.main<{ $theme: TContextTheme }>`
-  background-color: ${(props) =>
-    props.$theme === "light" ? light : background};
+const Main = styled.main`
   font-family: "Nunito Sans", sans-serif;
   max-width: 1440px;
   margin: 0 auto;

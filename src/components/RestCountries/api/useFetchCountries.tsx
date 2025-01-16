@@ -14,9 +14,9 @@ const fetchCountries = (params?: TQueryParams) => {
   }
 
   return async () => {
-    const response = await fetch(API_URL + suffix);
-    const data = await response.json();
-    return data;
+      const response = await fetch(API_URL + suffix);
+      const data = await response.json();
+      return data;
   };
 };
 
@@ -26,10 +26,12 @@ const useFetchCountries = (params?: TQueryParams) => {
     queryFn: fetchCountries(params),
   });
 
+  const arrayData = Array.isArray(data) ? data : [];
+
   return {
-    data,
+    data: arrayData,
     isLoading,
-    isError
+    isError,
   };
 };
 

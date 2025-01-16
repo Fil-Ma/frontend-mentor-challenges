@@ -50,8 +50,8 @@ const colorsMap = {
     background: blue.dark,
     border: "transparent",
     placeholder: white,
-  }
-}
+  },
+};
 
 const Form = styled.form<{ $theme: TContextTheme }>`
   display: flex;
@@ -59,8 +59,9 @@ const Form = styled.form<{ $theme: TContextTheme }>`
   border: 2px solid ${(props) => colorsMap[props.$theme].border};
   border-radius: 4px;
   padding: 5px;
-  width: 300px;
+  width: 400px;
   background-color: ${(props) => colorsMap[props.$theme].background};
+  box-sizing: border-box;
 
   div {
     display: flex;

@@ -14,20 +14,22 @@ const RestCountriesHeader = () => {
   const { theme, toggleTheme } = useDarkModeContext();
   return (
     <Header $theme={theme}>
-      <h1>Where in the world?</h1>
-      <button onClick={toggleTheme}>
-        {theme === "light" ? (
-          <>
-            <MoonIcon />
-            <span>Dark Mode</span>
-          </>
-        ) : (
-          <>
-            <SunIcon />
-            <span>Light Mode</span>
-          </>
-        )}
-      </button>
+      <ContentWrapper>
+        <h1>Where in the world?</h1>
+        <button onClick={toggleTheme}>
+          {theme === "light" ? (
+            <>
+              <MoonIcon />
+              <span>Dark Mode</span>
+            </>
+          ) : (
+            <>
+              <SunIcon />
+              <span>Light Mode</span>
+            </>
+          )}
+        </button>
+      </ContentWrapper>
     </Header>
   );
 };
@@ -35,13 +37,6 @@ const RestCountriesHeader = () => {
 export default RestCountriesHeader;
 
 const Header = styled.header<{ $theme: TContextTheme }>`
-  max-width: 1440px;
-  margin: 0 auto;
-  padding: 16px 32px;
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between;
-  align-items: center;
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
   font-family: "Nunito Sans", sans-serif;
 
@@ -65,6 +60,16 @@ const Header = styled.header<{ $theme: TContextTheme }>`
     color: inherit;
     font-weight: 500;
   }
+`;
+
+const ContentWrapper = styled.div`
+  max-width: 1440px;
+  margin: 0 auto;
+  padding: 16px 32px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
 
   @media (max-width: 600px) {
     padding: 32px 16px;

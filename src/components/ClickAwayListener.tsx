@@ -13,6 +13,7 @@ const ClickAwayListener = ({
 
   useEffect(() => {
     const handleClickAway = (event: any) => {
+      event.stopImmediatePropagation();
       if (
         containerRef.current &&
         !containerRef.current.contains(event.target)

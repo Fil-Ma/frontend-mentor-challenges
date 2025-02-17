@@ -38,7 +38,7 @@ const RestCountriesMain = () => {
     setSelectedCountry(null);
   };
 
-  const dataIsEmpty = data.length === 0
+  const dataIsEmpty = data.length === 0;
 
   return (
     <Main>

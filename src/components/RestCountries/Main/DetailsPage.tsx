@@ -11,7 +11,6 @@ const {
 
 const DetailsPage = ({ data }: { data: any }) => {
   const { theme } = useDarkModeContext();
-  
 
   const firstBlock = [
     {
@@ -62,12 +61,13 @@ const DetailsPage = ({ data }: { data: any }) => {
         <Neighbours $theme={theme}>
           <p>Border&nbsp;Countries:</p>
           <div>
-          {data.borders?.map((name: string) => {
-            return (
-              <NeighbourTag key={name} $theme={theme}>
-                {name}
-              </NeighbourTag>
-          )})}
+            {data.borders?.map((name: string) => {
+              return (
+                <NeighbourTag key={name} $theme={theme}>
+                  {name}
+                </NeighbourTag>
+              );
+            })}
           </div>
         </Neighbours>
       </DetailsContainer>
@@ -98,18 +98,18 @@ const Neighbours = styled.div<{ $theme: TContextTheme }>`
   @media (max-width: 600px) {
     display: block;
   }
-`
+`;
 
 const NeighbourTag = styled.p<{ $theme: TContextTheme }>`
-flex: 1;
-max-width: max-content;
+  flex: 1;
+  max-width: max-content;
   margin: 0;
   padding: 4px 20px;
   border-radius: 4px;
   box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
   background-color: ${(props) => (props.$theme === "light" ? white : dark)};
   color: ${(props) => (props.$theme === "light" ? text : white)};
-`
+`;
 
 const Container = styled.div`
   display: flex;

@@ -7,6 +7,7 @@ const PATHS = {
   EASY_BANK: "easy-bank",
   IP_TRACKER: "ip-tracker",
   REST_COUNTRIES: "rest-countries",
+  MULTI_STEP_FORM: "multi-step-form",
 };
 
 export default PATHS;

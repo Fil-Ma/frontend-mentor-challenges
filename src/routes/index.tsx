@@ -11,6 +11,7 @@ const ChatAppillustration = lazy(() => import("@pages/ChatAppIllustration"));
 const EasyBank = lazy(() => import("@pages/EasyBank"));
 const IpTracker = lazy(() => import("@pages/IpTracker"));
 const RestCountries = lazy(() => import("@pages/RestCountries"));
+const MultiStepForm = lazy(() => import("@pages/MultiStepForm"));
 
 export const routes = [
   {
@@ -30,6 +31,7 @@ export const routes = [
       { path: PATHS.EASY_BANK, element: <EasyBank /> },
       { path: PATHS.IP_TRACKER, element: <IpTracker /> },
       { path: PATHS.REST_COUNTRIES, element: <RestCountries /> },
+      { path: PATHS.MULTI_STEP_FORM, element: <MultiStepForm /> },
     ],
   },
 ];

@@ -9,26 +9,26 @@ const {
 } = colors["rest-countries"];
 
 const EmptyState = () => {
-  const { theme } = useDarkModeContext()
+  const { theme } = useDarkModeContext();
   return (
     <Wrapper $theme={theme}>
-      <p>No data is availble</p></Wrapper>
-  )
-}
+      <p>No data is availble</p>
+    </Wrapper>
+  );
+};
 
 export default EmptyState;
 
 const Wrapper = styled.div<{ $theme: TContextTheme }>`
-display: flex;
-align-items: center;
-justify-content: center;
-min-height: 50vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 50vh;
 
-p {
-font-size: 2rem;
-  line-height: 2.1rem;
+  p {
+    font-size: 2rem;
+    line-height: 2.1rem;
 
-  color: ${(props) => (props.$theme === "light" ? text : white)};
-}
-  
-`
+    color: ${(props) => (props.$theme === "light" ? text : white)};
+  }
+`;

@@ -64,8 +64,7 @@ const FormContainer = () => {
   return (
     <PageContainer>
       <MultiStepFormLayout steps={asideSteps}>
-              <Component onChangeStep={onChangeStep} />
-
+        <Component onChangeStep={onChangeStep} />
       </MultiStepFormLayout>
     </PageContainer>
   );

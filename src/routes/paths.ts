@@ -8,6 +8,7 @@ const PATHS = {
   IP_TRACKER: "ip-tracker",
   REST_COUNTRIES: "rest-countries",
   MULTI_STEP_FORM: "multi-step-form",
+  INTERACTIVE_COMMENTS: "interactive-comments",
 };
 
 export default PATHS;

@@ -13,6 +13,7 @@ const IpTracker = lazy(() => import("@pages/IpTracker"));
 const RestCountries = lazy(() => import("@pages/RestCountries"));
 const MultiStepForm = lazy(() => import("@pages/MultiStepForm"));
 const InteractiveComments = lazy(() => import("@pages/InteractiveComments"));
+const ExpensesChart = lazy(() => import("@pages/ExpensesChart"));
 
 export const routes = [
   {
@@ -34,6 +35,7 @@ export const routes = [
       { path: PATHS.REST_COUNTRIES, element: <RestCountries /> },
       { path: PATHS.MULTI_STEP_FORM, element: <MultiStepForm /> },
       { path: PATHS.INTERACTIVE_COMMENTS, element: <InteractiveComments /> },
+      { path: PATHS.EXPENSES_CHART, element: <ExpensesChart /> }
     ],
   },
 ];

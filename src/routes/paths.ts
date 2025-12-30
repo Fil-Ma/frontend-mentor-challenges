@@ -9,6 +9,7 @@ const PATHS = {
   REST_COUNTRIES: "rest-countries",
   MULTI_STEP_FORM: "multi-step-form",
   INTERACTIVE_COMMENTS: "interactive-comments",
+  EXPENSES_CHART: "expenses-chart"
 };
 
 export default PATHS;
